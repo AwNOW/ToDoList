@@ -2,42 +2,36 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+
+    <!-- sets the viewport of the web page to the width of the device and sets
+      the initial zoom level to 1. This helps ensure that the website displays properly
+      and responsively on various screen sizes, adjusting the content to fit the device width. /> -->
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- This tag is used to define the theme color for the browser toolbar,
+      address bar, or other UI elements of the web application.
+      In this case, it sets the theme color to black (#000000). -->
     <meta name="theme-color" content="#000000" />
-    <meta
-      name="description"
-      content="Web site created using create-react-app"
-    />
-    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
-    <!--
-      manifest.json provides metadata used when your web app is installed on a
-      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
-    -->
+
+    <!-- This line includes a link to a web app manifest file (manifest.json)
+      using the %PUBLIC_URL% placeholder, which typically gets replaced by
+      the actual public URL of the web application during the build process.  -->
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-    <!--
-      Notice the use of %PUBLIC_URL% in the tags above.
-      It will be replaced with the URL of the `public` folder during the build.
-      Only files inside the `public` folder can be referenced from the HTML.
 
-      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
-      work correctly both with client-side routing and a non-root public URL.
-      Learn how to configure a non-root public URL by running `npm run build`.
-    -->
-    <title>React App</title>
+    <!-- attribute specifies the source URL of the JavaScript file that
+      the browser should fetch and execute. -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.9/angular.min.js"></script>
+
+    <link rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+    crossorigin="anonymous">
+
+    <title>New App</title>
   </head>
+
   <body>
-    <noscript>You need to enable JavaScript to run this app.</noscript>
-    <div id="root"></div>
-    <!--
-      This HTML file is a template.
-      If you open it directly in the browser, you will see an empty page.
-
-      You can add webfonts, meta tags, or analytics to this file.
-      The build step will place the bundled scripts into the <body> tag.
-
-      To begin the development, run `npm start` or `yarn start`.
-      To create a production bundle, use `npm run build` or `yarn build`.
-    -->
+    <noscript>You need to enable TypeScript to run this app.</noscript>
+    <div id="root-all-elements"></div>
   </body>
 </html>

@@ -1,19 +1,38 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import React, { useEffect } from "react";
+import ReactDOM from "react-dom";
+import { BrowserRouter } from "react-router-dom";
+import { Provider } from "react-redux";
+import configureStore from "./store/index";
+import "./index.css";
+import App from "./App";
+import {saveToLocalStorage, loadFromLocalStorage} from "./localStore/localStore"
 
-const root = ReactDOM.createRoot(
-  document.getElementById('root') as HTMLElement
-);
-root.render(
+function Root() {
+
+  const store = configureStore(loadFromLocalStorage());
+
+  useEffect(() => {
+    store.subscribe(() => {
+      saveToLocalStorage(store.getState())
+    })
+  },[])
+
+  if (process.env.NODE_ENV !== "production") {
+    (window as any).store = store;
+  }
+
+  return (
+    <Provider store={store}>
+      <BrowserRouter>
+        <App />
+      </BrowserRouter>
+    </Provider>
+  );
+}
+
+ReactDOM.render(
   <React.StrictMode>
-    <App />
-  </React.StrictMode>
+    <Root />
+  </React.StrictMode>,
+  document.getElementById("root-all-elements")
 );
-
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
